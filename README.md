@@ -1,6 +1,6 @@
-# Project Title
+# Differential splicing analysis of chemosensory genes from antennae and maxillary palps in anopheles colluzzi and quadriannulatus 
 
-Simple overview of use/purpose.
+An overview of the tools, scripts and commands used to recreate this pipeline
 
 ## Description
 
