@@ -1,0 +1,17 @@
+#!/bin/bash
+
+mkdir -p paired_trimmed_reads_trimmomatic
+
+input_location=/mnt/studentfiles/2023/2023MBI_05/analysis/Raw_Data
+
+for file in "$input_location"/*_rep*.fastq; do
+
+    input="$file"
+    output="paired_trimmed_reads_trimmomatic/$(basename $file .fastq)_trimmed.fastq"
+    
+    #parameters defaults and https://www.biostars.org/p/315180/
+    trimmomatic PE -phred33 $input $output LEADING:28 TRAILING:28 SLIDINGWINDOW:10:30 MINLEN:45
+    
+    echo "Working on $file"
+
+done
