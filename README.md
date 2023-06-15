@@ -26,9 +26,45 @@ RNA star mapped bam files where fed into Featurecounts (version 2.0.3) <br />
 The featurecounts table was then fed into DESeq2 (version 2.11.40.7)<br />
 Annotation of the DESeq2 results was done with Annotate DESeq2/DEXSeq output tables” (version 1.1.0) <br />
 
-### Parameters
+### Parameters on the command line
 #### Trimmomatic
+LEADING:28 <br />
+TRAILING:28 <br />
+SLIDINGWINDOW:10:30 <br />
+MINLEN:45 <br />
 
+#### Tophat
+read-mismatches: 3 (for 50bp read files) / 7 (for 124bp read files)  <br /> 
+read-edit-dist: 6 <br /> 
+library-type: fr-unstranded <br /> 
+-p: 4 <br />
+
+#### kallisto
+--single<br />
+-b: 100<br />
+-l: 50 <br />
+-s: 20<br />
+
+### Parameters in galaxy
+
+#### RNA STAR
+Single end reads <br />
+use ref genome from history (Anopheles gambiae agamp4 GTF) <br />
+Length of the SA pre-indexing string: 14 <br />
+build index with gene model <br />
+Length of the genomic sequence around annotated junctions: 49  <br />
+
+#### feature counts
+Specify strand information: unstranded<br />
+gene annotation file: a GFF/GTF from history<br />
+GFF feature type filter: exon<br />
+GFF gene identifier: gene_id<br />
+does input have read pairs: no single end<br />
+
+#### DESeq2 
+Select datasets per level<br />
+Factor1 : species<br />
+Factor levels: Coluzzii and Quadriannulatus<br />
 
 
 
