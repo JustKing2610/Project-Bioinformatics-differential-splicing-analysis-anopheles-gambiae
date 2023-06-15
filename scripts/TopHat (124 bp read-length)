@@ -1,0 +1,9 @@
+#!bin/bash
+for file in "/mnt/studentfiles/2023/2023MBI_05/analysis/tophat_run/col_ant_rep2_trimmed.fastq" "/mnt/studentfiles/2023/2023MBI_05/analysis/tophat_run/qua_ant_rep1_trimmed.fastq" "/mnt/studentfiles/2023/2023MBI_05/analysis/tophat_run/qua_ant_rep2_trimmed.fastq" "/mnt/studentfiles/2023/2023MBI_05/analysis/tophat_run/qua_palp_rep1_trimmed.fastq" "/mnt/studentfiles/2023/2023MBI_05/analysis/tophat_run/qua_palp_rep2_trimmed.fastq"
+do
+    filename=$(basename "$file")
+    dirname="${filename%.*}"
+    output_dir="/mnt/studentfiles/2023/2023MBI_05/analysis/tophat/tophat_124bp_6percent/$dirname"
+    mkdir -p "$output_dir"
+    tophat --read-mismatches 7 --read-edit-dist 6 --library-type fr-unstranded -p 4 -o "$output_dir" /mnt/studentfiles/2023/2023MBI_05/analysis/tophat_run/Anopheles_gambiae $file
+done
