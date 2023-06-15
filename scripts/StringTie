@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+input_dir="/mnt/studentfiles/2023/2023MBI_05/analysis/tophat_output_6_percentage/"
+
+
+mkdir -p "/mnt/studentfiles/2023/2023MBI_05/analysis/full_suppa_analysis/stringtie_output/"
+
+
+for sample_dir in ${input_dir}/*_rep*_trimmed; do
+
+    sample_name=$(basename ${sample_dir})
+
+    
+    stringtie ${sample_dir}/accepted_hits.bam \
+        -p 4 \
+        -o /mnt/studentfiles/2023/2023MBI_05/analysis/full_suppa_analysis/stringtie_output/${sample_name}.gtf \
+        -A /mnt/studentfiles/2023/2023MBI_05/analysis/full_suppa_analysis/stringtie_output/${sample_name} \
+        -G /mnt/studentfiles/2023/2023MBI_05/analysis/suppa_analysis/Anopheles_gambiae.AgamP4.56.chr.gff3 \
+        -v \
+        -e
+         
+        
+done
