@@ -29,10 +29,15 @@ Annotation of the DESeq2 results was done with Annotate DESeq2/DEXSeq output tab
 ### Different scripts and their purpose/use
 
 #### FastQC
-The FastQC script is used to quality check the RNA-seq reads. This has been done before and after trimming with trimmomatic. By using the standard FastQC script: 
-' ' '
-Script to run FastQC
-' ' '
+The FastQC script is used to quality check the RNA-seq reads. This has been done before and after trimming with trimmomatic.
+#### Trimmomatic
+Trimmomatic is used for filtering and trimming the RNA-seq reads. So that the bad reads are filtered out, and less quality read-ends are trimmed of the reads.
+#### Tophat
+Tophat is used to map the trimmed and filtered reads on the reference genome. This results in .bam files, which can be used for assembly
+#### StringTie
+For the assembly StringTie is used. This tool generated gtf files for each sample.
+#### Suppa
+Suppa is a tool to find and measure alternative splicing. This is used for each sample
 ### Parameters on the command line
 #### Trimmomatic
 LEADING:28 <br />
