@@ -26,6 +26,13 @@ RNA star mapped bam files where fed into Featurecounts (version 2.0.3) <br />
 The featurecounts table was then fed into DESeq2 (version 2.11.40.7)<br />
 Annotation of the DESeq2 results was done with Annotate DESeq2/DEXSeq output tables” (version 1.1.0) <br />
 
+### Different scripts and their purpose/use
+
+#### FastQC
+The FastQC script is used to quality check the RNA-seq reads. This has been done before and after trimming with trimmomatic. By using the standard FastQC script: 
+' ' '
+Script to run FastQC
+' ' '
 ### Parameters on the command line
 #### Trimmomatic
 LEADING:28 <br />
@@ -65,9 +72,6 @@ does input have read pairs: no single end<br />
 Select datasets per level<br />
 Factor1 : species<br />
 Factor levels: Coluzzii and Quadriannulatus<br />
-
-### Different scripts and their purpose/use
-
 
 
 ## Authors
