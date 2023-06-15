@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# Directory .gtf files
+input_directory="/mnt/studentfiles/2023/2023MBI_05/analysis/full_suppa_analysis/stringtie_output/"
+
+# Output directory
+output_directory="/mnt/studentfiles/2023/2023MBI_05/analysis/full_suppa_analysis/suppa_generate_events/"
+
+# Path to eventGenerator.py script
+event_generator_script="/mnt/studentfiles/2023/2023MBI_05/miniconda3/envs/suppa2/bin/eventGenerator.py"
+
+# Loop through each .gtf file in the directory
+for gtf_file in "$input_directory"/*.gtf; do
+    # Get the filename without extension
+    filename=$(basename "$gtf_file" .gtf)
+
+    # Create directory for the current sample
+    sample_directory="$output_directory/$filename"
+    mkdir -p "$sample_directory"
+
+    # Output file path
+    output_file="$sample_directory/${filename}_output.ioe"
+
+    # Run eventGenerator.py command
+    python3 "$event_generator_script" -i "$gtf_file" -o "$output_file" -f ioe -e SE SS MX RI FL
+
+    # Print status
+    echo "Processed file: $filename"
+done
