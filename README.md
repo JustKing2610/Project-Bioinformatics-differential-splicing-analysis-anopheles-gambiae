@@ -8,8 +8,8 @@ In this research we provide alternatively spliced gene variants that may be resp
 ## Raw data availibity
 To gather the raw RNA-seq data follow this link: https://www.ncbi.nlm.nih.gov/sra/?term=PRJNA400609
 ## Reference FASTA and annotation file
-The used references can be found on: https://metazoa.ensembl.org/Anopheles_gambiae/Info/Index
-FASTA reference: Anopheles_gambiae.AgamP4.dna.toplevel.fa.gz
+The used references can be found on: https://metazoa.ensembl.org/Anopheles_gambiae/Info/Index <br />
+FASTA reference: Anopheles_gambiae.AgamP4.dna.toplevel.fa.gz <br />
 Annotation reference: Anopheles_gambiae.AgamP4.56.chr.gff3.gz
 
 ## Getting Started
