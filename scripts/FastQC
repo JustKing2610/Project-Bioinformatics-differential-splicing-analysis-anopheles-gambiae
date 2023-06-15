@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+input="/mnt/studentfiles/2023/2023MBI_05/analysis/trimmed_reads_trimmomatic_default"
+
+output="/mnt/studentfiles/2023/2023MBI_05/analysis/fastqc_after_trimming"
+
+for file in $input/*_trimmed.fastq; do
+
+    filename=$(basename "$file" .fastq)
+    
+    fastqc "$file" --outdir="$output" --threads=4
+
+    echo "FastQC completed for $filename.fastq"
+done
