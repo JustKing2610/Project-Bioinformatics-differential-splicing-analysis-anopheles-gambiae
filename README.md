@@ -1,6 +1,6 @@
 # Alternative splicing analysis of chemosensory genes from antennae and maxillary palps in anopheles colluzzi and quadriannulatus 
 
-An overview of the tools, scripts and commands used to recreate this pipeline
+An overview of the tools, scripts and commands used to create this pipeline
 
 ## Description
 
